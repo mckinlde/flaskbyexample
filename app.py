@@ -9,7 +9,11 @@ def index():
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
-    
+
+@app.route('/pricing')
+    def pricing():
+        return render_template('pricing.html')
+
 @app.route('/features')
 def features():
     return render_template('features.html')
@@ -20,5 +24,3 @@ def hello(name):
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0') #port :5000 when run from rpi terminal
-
-    
