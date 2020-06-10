@@ -1,6 +1,16 @@
 from flask import Flask, render_template
+from flask_wtf import FlaskForm
+from wtforms import StringField
 
 app = Flask(__name__)
+
+class contactForm(FlaskForm):
+    name = StringField('name')
+    email = StringField('email')
+    city = StringField('city')
+    state = StringField('state')
+    zip = StringField('zip')
+    
 
 @app.route('/')
 def index():
@@ -8,7 +18,8 @@ def index():
 
 @app.route('/contact')
 def contact():
-    return render_template('contact.html')
+    form = contactForm()
+    return render_template('contact.html', form=form)
 
 @app.route('/pricing')
 def pricing():
