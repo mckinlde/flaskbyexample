@@ -52,7 +52,8 @@
     <p class="lead">Introduce yourself with a Name and Email and we'll be in touch.</p>
     <p class="lead">Include your City, State, and Zip code and we'll check if DealerChimp is avaliable in your area.</p>
     <p class="lead">
-		<form>
+		<form method="POST" action="{{ url_for('form')}}">
+      {{ form.csrf_token }}
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputName4">Name</label>
